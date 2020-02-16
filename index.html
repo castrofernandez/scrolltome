@@ -1,12 +1,41 @@
 <html>
-        <head>
-            <script src="lib/index.js"></script>
-        </head>
-        <body>
-            This document is used to run the server. Start the tests with:
-            <ul>
-                <li>npm start or node server.js</li>
-                <li>npm test</li>
-            </ul>
-        </body>    
-    </html>
+    <head>
+        <script src="lib/index.js"></script>
+        <style>
+            .main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .test-section {
+                background-color: #CCCCCC;
+                text-align: center;
+                width: 50%;
+                min-height: 50vh;
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        This document is used to run the server. Start the tests with:
+        <ul>
+            <li>npm start or node server.js</li>
+            <li>npm test</li>
+        </ul>
+        <main class="main">
+            <section id="section1" class="test-section">1</section>
+            <section id="section2" class="test-section">2</section>
+            <section id="section3" class="test-section">3</section>
+            <section id="section4" class="test-section">4</section>
+            <section id="section5" class="test-section">5</section>
+            <section id="section6" class="test-section">6</section>
+        </main>
+
+        <script src="./tester.js"></script>
+    </body>
+</html>

@@ -27,7 +27,9 @@
     "url": "https://github.com/castrofernandez/scrolltome/issues"
   },
   "homepage": "https://github.com/castrofernandez/scrolltome#readme",
-  "dependencies": {},
+  "dependencies": {
+    "setupme": "^1.0.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",

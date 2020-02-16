@@ -1,5 +1,5 @@
 'use strict';
 
 describe('scrolltome', () => {
-  it('test', () => {});
+    it('test', () => {});
 });

@@ -4,21 +4,25 @@ const getDirection = (previousPosition) => previousPosition - window.scrollY >= 
 
 import Observed from './observed';
 
+const evaluateSubscribers = (subscribers = [], direction) => subscribers.forEach((item) => item.evaluate(direction));
+
+const filterFinished = (subscribers = []) => subscribers.filter(({finished}) => !finished);
+
 class Observer {
     constructor() {
         this.subscribers = [];
         this.previousScrollPosition = 0;
     }
 
-    subscribe(data = {}) {
-        const obs = new Observed(data);
+    subscribe(element = {}, data = {}) {
+        const obs = new Observed(element, data);
         this.subscribers.push(obs);
         obs.evaluate(this.direction);
     }
 
     evaluate() {
-        const direction = this.direction;
-        this.subscribers.forEach((subscriber) => subscriber.evaluate(direction));
+        evaluateSubscribers(this.subscribers, this.direction);
+        this.subscribers = filterFinished(this.subscribers);
     }
 
     onScroll() {
@@ -34,5 +38,3 @@ class Observer {
 const scrollObserver = new Observer();
 
 export default scrollObserver;
-
-window.addEventListener('scroll', () => scrollObserver.onScroll());

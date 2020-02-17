@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepublish": "babel --presets @babel/preset-env src --out-dir lib",
-    "test": "eslint src/*.js && mocha -r esm --reporter spec",
+    "test": "eslint src/*.js && mocha -r esm -r jsdom-global/register --reporter spec",
     "start": "node server.js",
     "dev": "webpack --watch"
   },
@@ -45,12 +45,15 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "esm": "^3.2.25",
+    "jsdom": "^16.2.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^7.0.1",
     "puppeteer": "^2.1.1",
     "serve-static": "^1.14.1",
     "sinon": "^8.1.1",
     "sinon-chai": "^3.4.0",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "whatsme": "^1.0.4"
   }
 }

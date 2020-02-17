@@ -1,9 +1,9 @@
 'use strict';
 
-import scrollObserver from './observer';
+import scrollObserver from './scroll.observer';
 
 const scrolltome = {
-    subscribe: (data = {}) => scrollObserver.subscribe(data),
+    subscribe: (element = {}, data = {}) => scrollObserver.subscribe(element, data),
 };
 
 export default scrolltome;
@@ -11,3 +11,5 @@ export default scrolltome;
 if (window && typeof window === 'object') {
     window['scrolltome'] = scrolltome;
 }
+
+window.addEventListener('scroll', () => scrollObserver.onScroll());

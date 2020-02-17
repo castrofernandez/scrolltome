@@ -25,8 +25,6 @@ class Observed {
         this.mustHandleOut = !!outOfViewPortHandler;
         this.outOfViewPortHandler = outOfViewPortHandler || (() => {});
 
-        // this.inViewPort = false;
-
         this.status = new SeenStatus(repeat);
     }
 

@@ -10,7 +10,12 @@ npm install scrolltome
 2. Usage
 
 ```
-
+scrolltome.subscribe({
+    element: document.getElementById('section1'),
+    inViewPortHandler: (data) => console.log(data),
+    outOfViewPortHandler: (data) => console.log(data),
+    repeat: 'FIRST_OUT',
+});
 ```
 
 3. Development
@@ -30,11 +35,3 @@ npm test
 ```
 
 `npm run dev` should be running to watch and recompile files.
-
-5. Options
-
-...
-
-6. List of methods
-
-...

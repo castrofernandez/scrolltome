@@ -12,6 +12,8 @@ const REPEAT_FINISHED_HANDLER = {
 
 const getHandler = (repeat) => REPEAT_FINISHED_HANDLER[repeat] || (() => false);
 
+const mustKeep = (repeat) => repeat === REPEAT.KEEP;
+
 class SeenStatus {
     constructor(repeat = REPEAT.FIRST_IN) {
         this.repeat = repeat;
@@ -33,11 +35,11 @@ class SeenStatus {
     }
 
     checkEntering(inViewPort) {
-        this.entering = inViewPort && !this.inViewPort;
+        this.entering = inViewPort && (!this.inViewPort || mustKeep(this.repeat));
     }
 
     checkLeaving(inViewPort) {
-        this.leaving = !inViewPort && (this.inViewPort || whatsme.isNull(this.inViewPort));
+        this.leaving = !inViewPort && (this.inViewPort || whatsme.isNull(this.inViewPort) || mustKeep(this.repeat));
     }
 }
 

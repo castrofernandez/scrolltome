@@ -61,7 +61,7 @@ describe('scroll.observer', () => {
 
         expect(inViewPortHandlerFirstIn).to.have.been.calledOnce;
         expect(outOfViewPortHandlerFirstIn).not.to.have.been.called;
-        expect(inViewPortHandlerKeep).to.have.been.calledOnce;
+        expect(inViewPortHandlerKeep).to.have.been.calledTwice;
         expect(outOfViewPortHandlerKeep).not.to.have.been.called;
         expect(ScrollObserver.subscribers.length).to.be.equal(1);
     });

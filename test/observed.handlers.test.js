@@ -1,7 +1,6 @@
 'use strict';
 
 import Observed from '../src/observed';
-import {isInViewPort} from '../src/utils';
 
 import chai, {expect} from 'chai';
 import sinon from 'sinon';

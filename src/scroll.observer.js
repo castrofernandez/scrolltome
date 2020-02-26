@@ -12,6 +12,7 @@ class Observer {
     constructor() {
         this.subscribers = [];
         this.previousScrollPosition = 0;
+        this.running = true;
     }
 
     subscribe(element = {}, data = {}) {
@@ -26,8 +27,18 @@ class Observer {
     }
 
     onScroll() {
-        this.evaluate();
-        this.previousScrollPosition = window.scrollY;
+        if (this.running) {
+            this.evaluate();
+            this.previousScrollPosition = window.scrollY;
+        }
+    }
+
+    start() {
+        this.running = true;
+    }
+
+    stop() {
+        this.running = false;
     }
 
     get direction() {

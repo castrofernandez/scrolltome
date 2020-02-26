@@ -1,6 +1,6 @@
 {
   "name": "scrolltome",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library to manage if an element is in ViewPort",
   "main": "lib/index.js",
   "directories": {

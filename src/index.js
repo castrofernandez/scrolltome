@@ -4,6 +4,8 @@ import scrollObserver from './scroll.observer';
 
 const scrolltome = {
     subscribe: ({element = {}, ...data} = {}) => scrollObserver.subscribe(element, data),
+    start: () => scrollObserver.start(),
+    stop: () => scrollObserver.stop(),
 };
 
 export default scrolltome;
